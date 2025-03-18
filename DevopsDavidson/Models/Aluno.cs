@@ -1,7 +1,13 @@
 ﻿namespace DevopsDavidson.Models
 {
     public class Aluno
+
     {
+        public Aluno()
+        {
+            
+        }
+
         public Guid Id { get; set; }
         public String ?Nome { get; set; }
         public String ?Rgm { get; set; }

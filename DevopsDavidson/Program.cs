@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using DevopsDavidson.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<DevopsDavidsonContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DevopsDavidsonContext") ?? throw new InvalidOperationException("Connection string 'DevopsDavidsonContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
